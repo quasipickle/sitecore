@@ -1,0 +1,68 @@
+/**
+ * Simply replicating the framework default drop shadow
+ */
+.img-shadow{
+    box-shadow: 0 1px 4px rgba(0,0,0,0.2);
+}
+
+/**
+* This replaces the need to wrap a solitary image in div.frame.  Just add this class to the image.
+* It provides the same look and feel to an image as the image component.
+*/
+.img-frame{
+    padding:0.35714286em;/* pulled from global stylesheet */
+    background:white;
+    border-radius:4px;
+    @extend .img-shadow;
+}
+
+/**
+ * Adding .frame-snug kills the width, as per: http://stackoverflow.com/questions/12747045/css-shrink-a-parent-div-to-fit-one-childs-width-and-constrain-the-width-of-th
+ * Provides the ability to have a captioned image
+ */
+
+.frame.frame-snug.pull-right,
+.frame.frame-snug.pull-left{
+	display:table;
+	width:auto;
+}
+
+/**
+ * -- Default override -- 
+ * By default .image-shadow is a block level element.  This makes it wrap more nicely around the content
+ */
+.image-shadow{
+  display:inline-block;
+}
+
+/**
+* These allow images to be floated left or right.  .img-top removes the top margin so it can be inline with the top of text
+*/
+
+.img-left{
+    float:left;
+    margin:10px 10px 10px 0;
+}
+.img-right{
+    float:right;
+    margin: 10px 0 10px 10px;
+}
+.img-top{
+    margin-top:0;
+}
+
+/**
+ * Images from the news site being displayed in a teaser list
+ * By default, the image is not styled and is inline.
+ */
+.list-item-description img{
+    @extend .img-frame;
+    float:left;
+    margin:0 10px 10px 0;   
+}
+
+// This is needed to ensure items properly wrap around the floated image
+.list-item-description{
+    overflow:auto;
+}
+

@@ -1,0 +1,13 @@
+/**
+ * Makes the text beside the profile image move below the image when the screen gets > 1200px
+ */
+@media(max-width:1200px){
+	.alumni-profile-column{
+		h3{
+			clear:left;
+		}
+		.btn{
+			margin-bottom:1rem;
+		}
+	}
+}

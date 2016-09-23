@@ -1,0 +1,48 @@
+/**
+ * -- Default override --
+ * Default is height of 1em, but since line height is > 1em, text gets cut off
+ */
+input[type="text"], input[type="password"], input[type="datetime"], input[type="datetime-local"], input[type="date"], input[type="month"], input[type="time"], input[type="week"], input[type="number"], input[type="email"], input[type="url"], input[type="search"], input[type="tel"], input[type="color"], .uneditable-input{
+	height:30px;
+}
+
+/**
+ * -- Default override --
+ * Help text gets placed right against a list box by default
+ */
+.scfListBox + .scfListBoxUsefulInfo{
+	padding-top:0.5em;
+}
+.scfDropList + .scfDropListUsefulInfo{
+	padding-top:0.5em;
+}
+
+/**
+ * -- Default override --
+ * By default the icon is partially outside the box.  This centers it.
+ * Original rule is just .scfDatePickerGeneralPanel .ui-icon, .ui-icon-calendar was added
+ * to increase specificity to override Default.css
+ */
+.scfDatePickerGeneralPanel .ui-icon.ui-icon-calendar{
+	top:-32px;
+	right:5px;
+}
+
+/**
+ * -- Default override --
+ * By default the checkboxes are really narrow. and floated left.  Any
+ * help text that follows then gets put to the right - terrible usability.  This removes
+ * the float and ensures the help text appears below
+ */
+div.scfCheckBoxListGeneralPanel{
+	float:none;
+	width:90%;
+}
+/**
+ * -- Default override --
+ * By default the label appears only 30% wide.  This isn't needed for
+ * checkbox lists because the boxes appear below anyway.
+ */
+span.scfCheckBoxListLabel{
+	width:100%
+}

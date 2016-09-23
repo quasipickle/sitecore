@@ -1,0 +1,111 @@
+.text-left{
+  text-align:left;
+}
+.text-right{
+  text-align:right;
+}
+.text-center{
+  text-align:center;
+}
+
+/**
+ * Makes a blockquote actually look like a blockquote and not just indented text
+ * Mimics BS4 styles
+ */
+.blockquote {
+  padding: ($spacer / 2) $spacer;
+  margin-bottom: $spacer;
+  margin-left:0;
+  font-size: $blockquote-font-size;
+  border-left: $blockquote-border-width solid $blockquote-border-color;
+}
+/**
+ * Makes the source of a blockquote styled.  Again, mimics BS4 styles
+ */
+.blockquote-footer {
+  display: block;
+  font-size: 80%; // back to default font-size
+  color: $blockquote-small-color;
+
+  &::before {
+    content: "\2014 \00A0"; // em dash, nbsp
+  }
+  margin:0;
+}
+
+.text-danger{
+  color:$state-danger-text;
+}
+.text-success{
+  color:$state-danger-text;
+}
+.text-warning{
+  color:$state-warning-text;
+}
+.text-info{
+  color:$state-info-text;
+}
+
+/* Use in conjunction with .bg-* class for background and font colour */
+.label{
+  font-size:14px;
+  padding:2px 4px;
+  border-radius:3px;
+}
+
+code{
+  padding:2px 4px;
+  background:white;
+  border:1px solid #e1e1e1;
+  white-space:nowrap;
+  border-radius:3px;
+}
+
+/**
+ * -- Default override --
+ * Default is 2.14... em - way too much
+ */
+.lead{
+  line-height:1.5em;
+}
+
+/**
+ * Used on the degree programs page to turn the majors into column-ed text
+ */
+.columns{
+  -webkit-column-count: 3;
+  -moz-column-count: 3;
+  column-count: 3;
+
+  -webkit-column-width: 30%;
+  -moz-column-count: 30%;
+  column-count: 30%;
+
+  @media (max-width:689px){
+    -webkit-column-count: 2;
+  -moz-column-count: 2;
+  column-count: 2;
+
+  -webkit-column-width: 50%;
+  -moz-column-count: 50%;
+  column-count: 50%;
+  }
+
+  @media (max-width:400px){
+    -webkit-column-count: 1;
+  -moz-column-count: 1;
+  column-count: 1;
+
+  -webkit-column-width: 100%;
+  -moz-column-count: 100%;
+  column-count: 100%;
+  }
+}
+
+/**
+ * -- Default override --
+ * Default is larger - likely in anticipation of 1 line <li>.  Multiple line <li> looks way too spaced out though
+ */
+.sidebar ul{
+  line-height:21.5333px;
+}

@@ -1,0 +1,12 @@
+/**
+ * -- Default override --
+ *
+ * The initial tab is missing the left border
+ *
+ * Drop shadows and rounded corners can't be fixed because the parent element will clip them
+ */
+
+.nav-tabs{
+	padding-left:1px;
+	margin-left:-1px;
+}

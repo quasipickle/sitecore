@@ -1,0 +1,137 @@
+/**
+ * This file adds additional classes to .extrude - allowing for colouration and headers
+ */
+
+/**
+ * -- Default override --
+ * Default is 0.71......em
+ */
+.extrude{
+	background:#fff;
+	border:none;
+	border-radius:4px;
+	box-shadow:0 1px 4px rgba(30,30,30,0.2);
+	padding:11px;
+}
+
+
+/**
+ * -- Default override --
+ */
+div.extrude p:last-child{
+	margin-bottom:0;
+}
+
+/**
+ * Used to provide a header section to an extrude.  Overridden by all the coloured extrudes
+ */
+.extrude-header{
+	background:white;
+	margin:-11px -11px 11px -11px;
+	padding:11px;
+	border-radius:4px 4px 0 0;
+}
+
+
+
+@mixin coloured-extrude($bg,$text,$border){
+	background-color:$bg;
+	color:$text;
+
+	& .extrude-header{
+		background:$border;
+	}
+}
+
+/**
+ * Used for drawing attention to an element, and denoting a positive result
+ */
+.extrude-success{
+	@include coloured-extrude($state-success-bg,$state-success-text,$state-success-border);
+}
+
+/**
+ * Used for drawing attention to an element, and denoting supplemental information
+ */
+.extrude-info{
+	@include coloured-extrude($state-info-bg,$state-info-text,$state-info-border);
+}
+
+/**
+ * Used for drawing attention to an element, and denoting information the user needs to be mindful of
+ */
+.extrude-warning{
+	@include coloured-extrude($state-warning-bg,$state-warning-text,$state-warning-border);
+}
+
+/**
+ * Used for drawing attention to an element, and denoting an error, or information that would be hazardous to ignore.
+ */
+.extrude-danger{
+	@include coloured-extrude($state-danger-bg,$state-danger-text,$state-danger-border);
+}
+
+/**
+ * Used to completely remove the title bar.  I don't believe this is ever used on it's own
+ */
+.sidebar .extrude.no-title-bar{
+	padding-top:0.5em;
+	.sidebar-title{
+		display:none;
+	}
+}
+
+/**
+ * Used on an image inside the sidebar that shouldn't have a shadow, such as a logo
+ */
+.sidebar .extrude.no-inner-shadow{
+	a.image-shadow::before{
+		box-shadow:none;
+	}
+}
+
+/**
+ * Used on an image in the sidebar that should have no visual styling, such as a logo
+ */
+.sidebar .extrude.raw-image{
+	box-shadow:none;
+	background:none;
+	padding:0;
+
+	.frame{
+		background:none;
+	}
+
+	a.image-shadow::before{
+		box-shadow:none;
+	}
+
+	img{
+		width:100%;
+	}
+}
+
+/**
+ * For sidebar elements that simply hold an image
+ * All occurrences of this class should be replaced by simply using an image component.
+ * 
+ * -- Default override --
+ * There are a bunch of funky styles that add extra padding
+ */
+
+// <div> needs to be declared to increase specificity so it can override .no-title-bar padding
+.sidebar div.extrude.img-wrapper{
+    padding:0;
+
+    & .sidebar-content{
+        padding:0;
+        margin:0;
+        line-height:0;
+    }
+
+    & .frame{
+        margin:0;
+        padding:10px;
+        border-radius:4px;
+    }
+}

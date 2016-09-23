@@ -1,0 +1,33 @@
+/**
+ * These classes are used by the framework when creating a static image featured pane.
+ * The styling mimics the styling visible when the carousel is used.
+ */
+.slide.image-caption-container{
+	padding: .35714286em;
+	background: #fff;
+	border-radius:4px;
+	box-shadow:0 1px 4px rgba(0,0,0,0.2);
+	position:relative;
+
+	img{
+		width:100%;
+	}
+
+	h3{
+		margin:0;
+	}
+	p:last-child{
+		margin-bottom:0;
+	}
+
+	.caption{
+		padding:0.9em;
+		position:absolute;
+		bottom:0;
+		left:0;
+		right:0;
+		background: rgba(255,255,255,0.95);
+		border-radius:0 0 4px 4px;
+	}
+
+}

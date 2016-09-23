@@ -1,0 +1,106 @@
+@import '_variables.scss';
+@import 'images.scss';
+@import 'spacing.scss';
+@import 'grid.scss';
+@import 'extrude.scss';
+@import 'form.scss';
+@import 'type.scss';
+@import 'tabs.scss';
+@import 'buttons.scss';
+@import 'tables.scss';
+@import 'map.scss';
+@import 'featured-content.scss';
+@import 'alumni.scss';
+
+/**
+* Clears floated elements.
+*/
+.clear{
+ clear:both;
+}
+
+/**
+ * Causes elements that have floated children, to expand to encompass the children
+ */
+.float-wrapper{
+	overflow:auto;
+}
+
+.text-center{
+	text-align:center;
+}
+
+/**
+ * -- Default override --
+ * Default has 2.5em, which causes some items to wrap to more lines.  There is already a visual indicator, so the extra padding is superfluous
+ */
+//.tertiary .first-column .nav-parent:hover{
+	//padding-right:1.5em;
+//}
+
+/**
+ * -- Default override --
+ * Apparently there's a Default.css that removes all padding & margin from lists
+ * but nothing adds it back.
+ */
+ul,ol{
+	.second-column &,
+	.sidebar &{
+		margin-left:25px;
+	}
+}
+
+iframe.borderless{
+	border:none;
+}
+
+/**
+ * Contextual background colours
+ */
+
+.bg-success{
+	color:white;
+	background:$brand-success;
+}
+.bg-info{
+	color:white;
+	background:$brand-info;
+}
+.bg-danger{
+	color:white;
+	background:$brand-danger;
+}
+.bg-warning{
+	color:white;
+	background:$brand-warning;
+}
+
+/**
+ * Default override
+ * By default, ul.data-list in .second-column arbitrarily gets some left margin.  This removes that
+ */
+
+.second-column ul.data-list{
+	margin-left:0;
+}
+
+/**
+ * Enforces a 16:9 ratio to an element, so an iframe containing a video inside it
+ * can be set to full size.
+ *
+ * Allows a video to be inline and still proportioned.
+ */
+.sixteen-nine{
+	position:relative;
+	padding-bottom:56.25%;
+	padding-top:0px;
+	height:0;
+
+	& iframe{
+		position:absolute;
+		top:0;
+		left:0;
+		width:100%;
+		height:100%
+	}
+}
